@@ -30,8 +30,7 @@ I installed by using XAMPP for Windows.
 I also installed mysql-installer-community-5.6.11.0.msi & doing step by step 
 
 2) Document where important files should be.
-I don't know 
-
+ANSWER:C:\Program Files\MySQL\MySQL Server 5.6\data
 
 Do not forget to do a pull request when your homework is complete.
 http://www.meetup.com/Virtual-Tech-Self-Study/messages/boards/thread/29963152/
