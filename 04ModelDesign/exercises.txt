@@ -1,5 +1,5 @@
 1. When would you use a weak entity?
-
+ANSWER:
 
 2. Is it better to use entities instead of attributes?
 
