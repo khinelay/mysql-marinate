@@ -1,9 +1,46 @@
 1. What do we mean when we say that MySQL has a client-server architecture?
+ANSWER: 
+Clients connect to the server to perform database operations such as reading or storing data.
+The server is the central program that manages database contents eg., mysqld program is the server that manages databases and tables
+The client requests (sends )queries to the server 
+
+eg., we use mysql client program-'mysql' to know the status of database,tables etc from server. 
 
 2. Use the monitor help to look up information on the SELECT statement. (We’ll discuss SELECT in detail in Chapter 5.)
+ANSWER:
+cd mysql --user root
+mysql>SELECT VERSION(); // output is 5.5.16
+mysql>HELP SELECT
+
 
 3. What is the difference between using the monitor in interactive mode and using
 the monitor in batch mode?
+ANSWER: 
+In interactive mode, I can type in SQL queries or MySQL commands such as SHOW DATABASES at the MySQL prompt and view the results.
+In batch mode, I have to tell the monitor to read in and execute a list of commands from a file. It is good for running a large set of operations.
+
+eg., in interactive mode, we have to write 2 commands to count all the users who have accounts on the MySQL server
+1. use mysql;
+2. SELECT COUNT(*)FROM user; 
+eg., in batch mode, I have to write 1 command because I write & save the commands in 1 file. So I need 1 command to open this file.
+1. SOURCE C:\mysqlcmd\count_users.sql 
+I save count_users.sql file in C:\mysqlcmd folder. In count_users.sql file, I write  following commands - use mysql; SELECT COUNT(*)FROM user; 
+
 
 4. What do the monitor user, password, and database options do?
+ANSWER:
+1. user is the username to use when connecting to the MySQL server. default is ODBC for Windows and machine account name for a Linux/Mac OS.
+2. password is the password of that user. If that user has no password, it is ok. Just press ENTER. & Connection will succeed.
+If that user has a password and don't specify it, connection will fail with "Access desined for user 'username@localhost' (using password:No)
+3. database is the database to use. 
+
+Questions:
+I have a question.
+1. MySQL Administrator program
+2. MySQL Query Browser program
+I do not see the above programs in http://dev.mysql.com/downloads/ . The link from book.
+I go to http://dev.mysql.com/downloads/gui-tools/5.0.html this page but i've got no luck. 
+They are the same as http://sourceforge.net/projects/mysql-admin/ 
+
+
 
