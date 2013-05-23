@@ -1,5 +1,5 @@
 1. What do we mean when we say that MySQL has a client-server architecture?
-ANSWER: 
+ANSWER
 Clients connect to the server to perform database operations such as reading or storing data.
 The server is the central program that manages database contents eg., mysqld program is the server that manages databases and tables
 The client requests (sends )queries to the server 
