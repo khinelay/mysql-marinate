@@ -25,7 +25,7 @@ b. customer(entity) can buy(relationship) CD - 1 to Many relationship
 c. Artist(entity) compiles CD 
 d. CD uses artist_name
 e  CD Contains Track
-
+---------------------------------------------------------------------
 
 
  - There are two types of product: music CDs and video DVDs.
