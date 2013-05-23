@@ -1,14 +1,33 @@
 1. When would you use a weak entity?
-ANSWER:
+ANSWER: a weak entity is an entity that cannot be uniquely identified by its attribute alone. It cannot exist without the entity with which it has a relationship.
+eg., a customer has a child. A child is a weak entity and it is uniquely identified in strong entity (customer). Weak entity has an identifying relationship.
 
 2. Is it better to use entities instead of attributes?
+ANSWER:
+It depends on the situation.
+a. Items of direct interest should be entities.eg., customer should be entity; email should be an attribute of customer entity.
+b. If the object has multiple instances, we need to represent the object as a separate entity eg., customer has more than 1 email address, email address has to be an entity
+c. If the object is often nonexistent or unknown, we use entity.
 
 
 3. Alter and extend the music database ER model so that it can store 
 compilations, where a compilation is an album that contains tracks by two 
 or more different artists. Explain what you changed and why.
+ANSWER:
+Please see diagram4.jpg.  I changed Artist to album relationship to Many-to-Many relationship. 
+
 
 4. Create an ER diagram for an online media store and explain your choices (e.g. why did you make X an entity and Y a relationship) using the following requirements:
+ANSWER: 
+please see videostore.jpg
+a. customer(entity) can buy(relationship) DVD - 1 to Many relationship
+b. customer(entity) can buy(relationship) CD - 1 to Many relationship
+c. Artist(entity) compiles CD 
+d. CD uses artist_name
+e  CD Contains Track
+
+
+
  - There are two types of product: music CDs and video DVDs.
  - Customers can buy any number of each product.
  - For each CD, store the title, the artist’s name, the label (publisher), 
