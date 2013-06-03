@@ -25,7 +25,7 @@ ANSWER:
 
 SELECT count(*) 
 FROM track INNER JOIN album ON (track.album_id=album.album_id) 
-WHERE album.album_name='Retro - New Order / Bobby Gillespie LIVE';
+WHERE album.album_name='Brotherhood';
 
 2) Using a join, list the albums that we own by the band New Order
 SELECT album.album_name
@@ -83,4 +83,4 @@ WHERE track_name='Original';
 
 
 6) Remove the 'Bonus Track' from the Leftism album,
-DELETE FROM track WHERE track_name = 'Bonus';
+DELETE FROM track WHERE track_name = 'Bonus Track';
