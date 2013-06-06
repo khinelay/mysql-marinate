@@ -7,18 +7,54 @@ For these exercises, use the "music" database.
 
 1) Write a JOIN query that displays the name of each artist and the albums
 they've made. Alongside the album, display the number of tracks on the album.
+ANSWER:
+SELECT artist_name, album_name, COUNT(*) AS TotalTracks
+FROM artist INNER JOIN album USING ( artist_id )
+INNER JOIN track USING ( artist_id, album_id )
+GROUP BY artist.artist_id, album.album_id
+
 
 2) Repeat Question 1, but now display only those albums that have more
 than 10 tracks
+ANSWER:
+SELECT artist_name, album_name, COUNT( track_id ) AS TotalTracks
+FROM artist INNER JOIN album USING ( artist_id )
+INNER JOIN track USING ( artist_id, album_id )
+GROUP BY artist.artist_id, album.album_id
+HAVING COUNT(track_id) >10;
 
 3) Repeat Question 1, but write it as a nested query.
+ANSWER:
+I've got this error "Subquery returns more than 1 row" and I don't know how to make nested query again for track.
+SELECT artist_name
+FROM artist WHERE artist_id=
+(SELECT DISTINCT artist_id FROM album)
 
 4) What are the four types of nested queries? For each type, write a sample
 query on the music database. Try to use different keywords in each query,
 selecting from ANY, ALL, EXISTS (or NOT EXISTS) and IN (or NOT IN).
+ANSWER:
+
+SELECT artist_name
+ FROM artist WHERE artist_id = ANY
+ (SELECT artist_id FROM album);
+ 
+ SELECT * FROM artist WHERE EXISTS (SELECT * FROM played);
+ SELECT * FROM artist WHERE NOT EXISTS (SELECT * FROM played);
+ 
 
 5) What is the difference between an INNER JOIN, a LEFT JOIN, and a RIGHT
 JOIN? Does the the order of tables matter in an INNER JOIN? Why or why not?
+ANSWER: 
+a, INNER JOIN
+	The INNER JOIN clause matches rows between two tables based on the criteria you provide in the USING clause. 
+b. LEFT JOIN
+-each row in the left table—the one that’s doing the driving—is processed and output, with the matching data from the second table if it exists and NULL values if there is no matching data in the second table
+-The order of the tables in the LEFT JOIN is important
+c. RIGHT JOIN
+-right drives the process.
+-do not recommended by the author
+d. order of tables do not matter in an Inner Join because output only rows that match between tables.
 
 6) Why do these queries give different results? What does this tell you
 about using join conditions in the ON clause versus in the WHERE clause
@@ -37,3 +73,5 @@ LEFT JOIN played ON (track.album_id=played.album_id)
 WHERE track.track_id=played.track_id
 AND track.artist_id=3
 GROUP BY track_name, track.album_id;
+
+ANSWER:
