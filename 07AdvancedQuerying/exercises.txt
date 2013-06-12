@@ -25,7 +25,7 @@ HAVING COUNT(track_id) >10;
 
 3) Repeat Question 1, but write it as a nested query.
 ANSWER:
-I've got this error "Subquery returns more than 1 row" and I don't know how to make nested query again for track.
+I've got this error "Subquery returns more than 1 row" and I don't know how to make nested query again for track. I think if my answer 1 is wrong? 
 SELECT artist_name
 FROM artist WHERE artist_id=
 (SELECT DISTINCT artist_id FROM album)
