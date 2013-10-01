@@ -27,7 +27,7 @@ HAVING COUNT(track_id) >10;
 ANSWER:
 I've got this error "Subquery returns more than 1 row" and I don't know how to make nested query again for track. I think if my answer 1 is wrong? 
 SELECT artist_name
-FROM artist WHERE artist_id=
+FROM artist WHERE artist_id= ANY
 (SELECT DISTINCT artist_id FROM album)
 
 4) What are the four types of nested queries? For each type, write a sample
@@ -75,3 +75,12 @@ AND track.artist_id=3
 GROUP BY track_name, track.album_id;
 
 ANSWER:
+1. 1st query "track.album_id=played.album_id" in the left join gives
+thirteen results.Artist id is 3. 
+But it joined  track table and played table by track_id ,but result included not only track.track_id=played.track_id but also played.track_id=NULL are included.
+It also joined track table and played table by album_id, but result included not only track.album_id=played.album_id but also played.album_id=NULL are included.
+all data from played is included
+
+2. 2nd query "track.album_id=played.album_id" in the WHERE clause gives 
+three results. Artist id is 3 AND track and played's track_id are the same. 
+WHERE clause gives the exact result. 
